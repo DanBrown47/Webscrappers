@@ -1,7 +1,9 @@
 from threading import Thread
 from selenium import webdriver
 from bs4 import BeautifulSoup
+import datetime
 import time
+import csv
 
 # Constants
 driver = webdriver.Chrome("/home/rook/PycharmProjects/news/chromedriver")
@@ -12,16 +14,23 @@ def main():
     News24_url = "https://www.youtube.com/watch?v=zcrUCvBD16k"
     Manorma_url = "https://www.youtube.com/watch?v=jjH6v95z3Nw"
     MediaOne_url = "https://www.youtube.com/watch?v=d1iwUB9YFnA"
-    view_asianet = Asianet(Asianet_url)
-    view_24 = News24(News24_url)
-    view_manorama = Manorma(Manorma_url)
-    view_media1 = MediaOne(MediaOne_url)
+    while True:
+        view_asianet = Asianet(Asianet_url)
+        view_24 = News24(News24_url)
+        view_manorama = Manorma(Manorma_url)
+        view_media1 = MediaOne(MediaOne_url)
+
+
+        with open('View_log.csv', 'a+', newline='\n') as file:
+            writer = csv.writer(file)
+            writer.writerow([datetime.datetime.now(), view_asianet, view_24, view_manorama, view_media1])
+
 
 
 
 def Asianet(Asianet_url):
     driver.get(Asianet_url)
-    time.sleep(1.5)
+    time.sleep(2)
     page = driver.page_source
     soup = BeautifulSoup(page, 'html.parser')
     span = soup.find("span", {"class":"view-count"})
@@ -31,7 +40,7 @@ def Asianet(Asianet_url):
 
 def News24(News24_url):
     driver.get(News24_url)
-    time.sleep(1.5)
+    time.sleep(2)
     page = driver.page_source
     soup = BeautifulSoup(page, 'html.parser')
 
@@ -42,7 +51,7 @@ def News24(News24_url):
 
 def Manorma(Manorma_url):
     driver.get(Manorma_url)
-    time.sleep(0.5)
+    time.sleep(2)
     page = driver.page_source
     soup = BeautifulSoup(page, 'html.parser')
     span = soup.find("span", {"class":"view-count"})
@@ -52,7 +61,7 @@ def Manorma(Manorma_url):
 
 def MediaOne(MediaOne_url):
     driver.get(MediaOne_url)
-    time.sleep(0.5)
+    time.sleep(2)
     page = driver.page_source
     soup = BeautifulSoup(page, 'html.parser')
     span = soup.find("span", {"class":"view-count"})
