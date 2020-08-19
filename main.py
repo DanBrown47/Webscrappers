@@ -1,4 +1,4 @@
-from threading import Thread
+# from threading import Thread
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from bs4 import BeautifulSoup
