@@ -1,38 +1,48 @@
 from threading import Thread
+from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from bs4 import BeautifulSoup
-import datetime
+from datetime import datetime
 import time
 import csv
 
 # Constants
 driver = webdriver.Chrome("/home/rook/PycharmProjects/news/chromedriver")
+options = webdriver.ChromeOptions()
+options.headless = True
+options.add_argument('--disable-gpu')
+
 
 
 def main():
+    count = 4
     Asianet_url = "https://www.youtube.com/watch?v=iL53Y28Rp84"
     News24_url = "https://www.youtube.com/watch?v=zcrUCvBD16k"
     Manorma_url = "https://www.youtube.com/watch?v=jjH6v95z3Nw"
     MediaOne_url = "https://www.youtube.com/watch?v=d1iwUB9YFnA"
     while True:
+        now = datetime.now()
+        current_time = now.strftime("%Y-%m-%d %H:%M:%S")
         view_asianet = Asianet(Asianet_url)
         view_24 = News24(News24_url)
         view_manorama = Manorma(Manorma_url)
         view_media1 = MediaOne(MediaOne_url)
-        writecsv(view_asianet, view_24, view_manorama, view_media1)
+        writecsv(current_time, view_asianet, view_24, view_manorama, view_media1)
+        print(count)
+        count = count + 4
 
 
-def writecsv(view_asianet, view_24, view_manorama, view_media1):
+def writecsv(current_time, view_asianet, view_24, view_manorama, view_media1):
     with open('View_log.csv', 'a+', newline='\n') as file:
         writer = csv.writer(file)
-        writer.writerow([datetime.datetime.now(), view_asianet, view_24, view_manorama, view_media1])
+        writer.writerow([current_time, view_asianet, view_24, view_manorama, view_media1])
 
 
 
 
 def Asianet(Asianet_url):
     driver.get(Asianet_url)
-    time.sleep(2)
+    time.sleep(1)
     page = driver.page_source
     soup = BeautifulSoup(page, 'html.parser')
     span = soup.find("span", {"class":"view-count"})
@@ -42,7 +52,7 @@ def Asianet(Asianet_url):
 
 def News24(News24_url):
     driver.get(News24_url)
-    time.sleep(2)
+    time.sleep(1)
     page = driver.page_source
     soup = BeautifulSoup(page, 'html.parser')
 
@@ -53,7 +63,7 @@ def News24(News24_url):
 
 def Manorma(Manorma_url):
     driver.get(Manorma_url)
-    time.sleep(2)
+    time.sleep(1)
     page = driver.page_source
     soup = BeautifulSoup(page, 'html.parser')
     span = soup.find("span", {"class":"view-count"})
@@ -63,7 +73,7 @@ def Manorma(Manorma_url):
 
 def MediaOne(MediaOne_url):
     driver.get(MediaOne_url)
-    time.sleep(2)
+    time.sleep(1)
     page = driver.page_source
     soup = BeautifulSoup(page, 'html.parser')
     span = soup.find("span", {"class":"view-count"})
