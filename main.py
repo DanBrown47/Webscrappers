@@ -19,11 +19,13 @@ def main():
         view_24 = News24(News24_url)
         view_manorama = Manorma(Manorma_url)
         view_media1 = MediaOne(MediaOne_url)
+        writecsv(view_asianet, view_24, view_manorama, view_media1)
 
 
-        with open('View_log.csv', 'a+', newline='\n') as file:
-            writer = csv.writer(file)
-            writer.writerow([datetime.datetime.now(), view_asianet, view_24, view_manorama, view_media1])
+def writecsv(view_asianet, view_24, view_manorama, view_media1):
+    with open('View_log.csv', 'a+', newline='\n') as file:
+        writer = csv.writer(file)
+        writer.writerow([datetime.datetime.now(), view_asianet, view_24, view_manorama, view_media1])
 
 
 
