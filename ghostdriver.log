@@ -1,0 +1,42 @@
+[INFO  - 2020-08-20T12:38:09.742Z] GhostDriver - Main - running on port 45269
+[INFO  - 2020-08-20T12:38:10.563Z] Session [019a09e0-e2e2-11ea-a224-eb4789d72d08] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2020-08-20T12:38:10.563Z] Session [019a09e0-e2e2-11ea-a224-eb4789d72d08] - page.customHeaders:  - {}
+[INFO  - 2020-08-20T12:38:10.563Z] Session [019a09e0-e2e2-11ea-a224-eb4789d72d08] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2020-08-20T12:38:10.563Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 019a09e0-e2e2-11ea-a224-eb4789d72d08
+[ERROR - 2020-08-20T12:38:11.999Z] Session [019a09e0-e2e2-11ea-a224-eb4789d72d08] - page.onError - msg: TypeError: Attempting to configurable attribute of unconfigurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-20T12:38:11.999Z] Session [019a09e0-e2e2-11ea-a224-eb4789d72d08] - page.onError - stack:
+  defineProperty (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:150)
+  b (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:150)
+  (anonymous function) (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:152)
+  Ub (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:125)
+  (anonymous function) (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:127)
+  Nb (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:124)
+  Qb (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:124)
+  Xb (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:127)
+  bc (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:136)
+  H (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:136)
+  lc (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:153)
+  (anonymous function) (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:153)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-20T12:38:12.024Z] Session [019a09e0-e2e2-11ea-a224-eb4789d72d08] - page.onError - msg: TypeError: Attempting to configurable attribute of unconfigurable property.
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-20T12:38:12.024Z] Session [019a09e0-e2e2-11ea-a224-eb4789d72d08] - page.onError - stack:
+  defineProperty (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:150)
+  b (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:150)
+  (anonymous function) (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:152)
+  Ub (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:125)
+  $b (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:134)
+  createElement (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:143)
+  loadJS (https://www.youtube.com/watch?v=iL53Y28Rp84:220)
+  dispatchEvent (:0)
+  (anonymous function) (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:32)
+  (anonymous function) (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:17)
+  d (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:17)
+  (anonymous function) (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:17)
+  q (https://www.youtube.com/s/desktop/1eca3218/jsbin/webcomponents-lite-noPatch.vflset/webcomponents-lite-noPatch.js:17)
+
+  phantomjs://platform/console++.js:263 in error

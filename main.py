@@ -1,17 +1,14 @@
-# from threading import Thread
-from selenium.webdriver.chrome.options import Options
+from threading import Thread
+from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from datetime import datetime
 import time
 import csv
 
-# Constants
-driver = webdriver.Chrome("/home/rook/PycharmProjects/news/chromedriver")
-options = webdriver.ChromeOptions()
+options = Options()
 options.headless = True
-options.add_argument('--disable-gpu')
-
+driver = webdriver.Firefox(options=options, executable_path=r"/home/rook/PycharmProjects/news/geckodriver")
 
 
 def main():
