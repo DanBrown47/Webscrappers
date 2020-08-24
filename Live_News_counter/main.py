@@ -1,4 +1,4 @@
-from threading import Thread
+import multiprocessing
 from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 from bs4 import BeautifulSoup
@@ -7,7 +7,7 @@ import time
 import csv
 
 options = Options()
-options.headless = True
+# options.headless = True
 driver = webdriver.Firefox(options=options, executable_path=r"/home/rook/PycharmProjects/news/geckodriver")
 
 
@@ -20,14 +20,27 @@ def main():
     while True:
         now = datetime.now()
         current_time = now.strftime("%Y-%m-%d %H:%M:%S")
-        view_asianet = Asianet(Asianet_url)
-        view_24 = News24(News24_url)
-        view_manorama = Manorma(Manorma_url)
-        view_media1 = MediaOne(MediaOne_url)
-        writecsv(current_time, view_asianet, view_24, view_manorama, view_media1)
+        proc0 = multiprocessing.Process(target=Asianet, args=(Asianet_url, ))
+        proc1 = multiprocessing.Process(target=News24, args=(News24_url, ))
+        proc2 = multiprocessing.Process(target=Manorma, args=(Manorma_url, ))
+        proc3 = multiprocessing.Process(target=MediaOne, args=(MediaOne_url, ))
+
+        proc0.start()
+        proc1.start()
+        proc2.start()
+        proc3.start()
+
+        proc0.join()
+        proc1.join()
+        proc2.join()
+        proc3.join()
+        # view_asianet = Asianet(Asianet_url)
+        # view_24 = News24(News24_url)
+        # view_manorama = Manorma(Manorma_url)
+        # view_media1 = MediaOne(MediaOne_url)
+
         print(count)
         count = count + 4
-
 
 def writecsv(current_time, view_asianet, view_24, view_manorama, view_media1):
     with open('View_log.csv', 'a+', newline='\n') as file:
@@ -77,6 +90,8 @@ def MediaOne(MediaOne_url):
     watch = span.text
     number = int(''.join(filter(str.isdigit, watch)))
     return number
+
+
 
 if __name__ == "__main__":
     main()
