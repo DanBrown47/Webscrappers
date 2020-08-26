@@ -18,7 +18,7 @@ base_url = "https://vahan.nic.in/nrservices/faces/user/searchstatus.xhtml"
 letterlist = ["A","B"]
 def main():
     driver.get(base_url)
-    captcha = input("Your Captcha Here")
+    captcha = get_captcha()
     for letters in letterlist:
         for i in range(1, 10**4):
             plate = state + str(dist) + letters + str(i)
@@ -32,6 +32,24 @@ def main():
             time.sleep(2)
             extract_data()
 
+def get_captcha():
+    driver.find_element_by_id("regn_no1_exact").send_keys("KL11A01")
+    for i in range(100):
+            driver.find_element_by_id("txt_ALPHA_NUMERIC").clear()
+            driver.find_element_by_id("txt_ALPHA_NUMERIC").send_keys(i)
+            driver.find_element_by_xpath("/html/body/form/div[1]/div[3]/div/div[2]/div/div/div[2]/div[4]/div/button").click()
+            time.sleep(2)
+            page =  driver.page_source
+            soup = BeautifulSoup(page, 'html.parser')
+            details_3 = soup.findAll("div", {"class": "col-md-3"})
+            try:
+                registration_no = clean(details_3[1].get_text())
+            except IndexError:
+                print("Captcha is not"+ str(i)+ "Checking" + str(i+1))
+            else:
+                captcha = i
+                print(captcha)
+                return captcha
 
 def extract_data():
     page =  driver.page_source

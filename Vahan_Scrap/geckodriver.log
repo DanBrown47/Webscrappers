@@ -656,3 +656,188 @@ Exiting due to channel error.
 1598434368088	Marionette	INFO	Listening on port 38197
 1598434368116	Marionette	WARN	TLS certificate errors will be ignored for this session
 1598434412236	Marionette	INFO	Stopped listening on port 38197
+1598437126728	geckodriver	INFO	Listening on 127.0.0.1:54677
+1598437126734	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileLgJgn1"
+
+(/usr/lib/firefox/firefox:119030): dconf-WARNING **: 15:48:50.443: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:119030): WARNING **: 15:48:50.444: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:119051): dconf-WARNING **: 15:48:50.482: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:119051): WARNING **: 15:48:50.483: Unable to connect to dbus: Could not connect: Permission denied
+1598437131128	Marionette	INFO	Listening on port 38249
+1598437131155	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598437160808	Marionette	INFO	Stopped listening on port 38249
+1598438038717	geckodriver	INFO	Listening on 127.0.0.1:45615
+1598438038751	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilep47VW2"
+
+(/usr/lib/firefox/firefox:120403): dconf-WARNING **: 16:04:02.386: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:120403): WARNING **: 16:04:02.387: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:120437): dconf-WARNING **: 16:04:02.603: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:120437): WARNING **: 16:04:02.603: Unable to connect to dbus: Could not connect: Permission denied
+1598438042811	Marionette	INFO	Listening on port 38223
+1598438042863	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:120532): dconf-WARNING **: 16:04:41.350: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:120532): WARNING **: 16:04:41.351: Unable to connect to dbus: Could not connect: Permission denied
+1598438083365	Marionette	INFO	Stopped listening on port 38223
+1598438144411	geckodriver	INFO	Listening on 127.0.0.1:40881
+1598438144418	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile58HO5m"
+
+(/usr/lib/firefox/firefox:120897): dconf-WARNING **: 16:05:47.779: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:120897): WARNING **: 16:05:47.780: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:120918): dconf-WARNING **: 16:05:47.885: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:120918): WARNING **: 16:05:47.885: Unable to connect to dbus: Could not connect: Permission denied
+1598438148103	Marionette	INFO	Listening on port 39983
+1598438148143	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:121005): dconf-WARNING **: 16:08:57.617: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:121005): WARNING **: 16:08:57.618: Unable to connect to dbus: Could not connect: Permission denied
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1598439144732	Marionette	INFO	Stopped listening on port 39983
+1598462732208	geckodriver	INFO	Listening on 127.0.0.1:36955
+1598462732253	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilefB5BfC"
+
+(/usr/lib/firefox/firefox:27942): dconf-WARNING **: 22:55:37.885: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:27942): WARNING **: 22:55:37.886: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:27963): dconf-WARNING **: 22:55:38.175: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:27963): WARNING **: 22:55:38.176: Unable to connect to dbus: Could not connect: Permission denied
+1598462738741	Marionette	INFO	Listening on port 46645
+1598462738794	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1598463545885	geckodriver	INFO	Listening on 127.0.0.1:42365
+1598463545891	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileKF9OTo"
+
+(/usr/lib/firefox/firefox:29035): dconf-WARNING **: 23:09:09.274: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:29035): WARNING **: 23:09:09.274: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:29056): dconf-WARNING **: 23:09:09.477: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:29056): WARNING **: 23:09:09.479: Unable to connect to dbus: Could not connect: Permission denied
+1598463549663	Marionette	INFO	Listening on port 44681
+1598463549702	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598463605706	Marionette	INFO	Stopped listening on port 44681
+1598463607861	geckodriver	INFO	Listening on 127.0.0.1:33563
+1598463607867	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileAZRzp7"
+
+(/usr/lib/firefox/firefox:29340): dconf-WARNING **: 23:10:11.261: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:29340): WARNING **: 23:10:11.262: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:29362): dconf-WARNING **: 23:10:11.417: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:29362): WARNING **: 23:10:11.418: Unable to connect to dbus: Could not connect: Permission denied
+1598463611553	Marionette	INFO	Listening on port 34031
+1598463611596	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:29445): dconf-WARNING **: 23:12:19.469: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:29445): WARNING **: 23:12:19.469: Unable to connect to dbus: Could not connect: Permission denied
+1598463845451	Marionette	INFO	Stopped listening on port 34031
+1598463866042	geckodriver	INFO	Listening on 127.0.0.1:44451
+1598463866051	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileeTY0bT"
+
+(/usr/lib/firefox/firefox:30020): dconf-WARNING **: 23:14:29.507: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:30020): WARNING **: 23:14:29.508: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:30041): dconf-WARNING **: 23:14:29.617: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:30041): WARNING **: 23:14:29.618: Unable to connect to dbus: Could not connect: Permission denied
+1598463869753	Marionette	INFO	Listening on port 42739
+1598463869760	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598463925509	Marionette	INFO	Stopped listening on port 42739
+1598463930212	geckodriver	INFO	Listening on 127.0.0.1:41289
+1598463930219	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileAAeTtC"
+
+(/usr/lib/firefox/firefox:30416): dconf-WARNING **: 23:15:33.667: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:30416): WARNING **: 23:15:33.668: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:30437): dconf-WARNING **: 23:15:33.810: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:30437): WARNING **: 23:15:33.811: Unable to connect to dbus: Could not connect: Permission denied
+1598463934082	Marionette	INFO	Listening on port 43107
+1598463934131	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598463984880	geckodriver	INFO	Listening on 127.0.0.1:42767
+1598463984979	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilehlEKUG"
+
+(/usr/lib/firefox/firefox:30707): dconf-WARNING **: 23:16:28.251: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:30707): WARNING **: 23:16:28.252: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:30735): dconf-WARNING **: 23:16:28.541: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:30735): WARNING **: 23:16:28.542: Unable to connect to dbus: Could not connect: Permission denied
+1598463988893	Marionette	INFO	Listening on port 44065
+1598463988991	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598464079750	Marionette	INFO	Stopped listening on port 44065
+1598464083306	Marionette	INFO	Stopped listening on port 43107
+1598464086639	geckodriver	INFO	Listening on 127.0.0.1:53891
+1598464086645	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilexTJllc"
+
+(/usr/lib/firefox/firefox:31115): dconf-WARNING **: 23:18:10.056: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:31115): WARNING **: 23:18:10.057: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:31137): dconf-WARNING **: 23:18:10.186: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:31137): WARNING **: 23:18:10.186: Unable to connect to dbus: Could not connect: Permission denied
+1598464090456	Marionette	INFO	Listening on port 36019
+1598464090556	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1598464170434	geckodriver	INFO	Listening on 127.0.0.1:47635
+1598464170443	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileoWIDaZ"
+
+(/usr/lib/firefox/firefox:31451): dconf-WARNING **: 23:19:33.941: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:31451): WARNING **: 23:19:33.942: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:31444): dconf-WARNING **: 23:19:33.989: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:31444): WARNING **: 23:19:33.990: Unable to connect to dbus: Could not connect: Permission denied
+1598464174242	Marionette	INFO	Listening on port 38715
+1598464174262	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:31551): dconf-WARNING **: 23:20:06.522: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:31551): WARNING **: 23:20:06.523: Unable to connect to dbus: Could not connect: Permission denied
+1598464208565	Marionette	INFO	Stopped listening on port 38715
+1598464311130	geckodriver	INFO	Listening on 127.0.0.1:53255
+1598464311136	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileckKjFP"
+
+(/usr/lib/firefox/firefox:31901): dconf-WARNING **: 23:21:54.341: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:31901): WARNING **: 23:21:54.341: Unable to connect to dbus: Could not connect: Permission denied
+
+(/usr/lib/firefox/firefox:31922): dconf-WARNING **: 23:21:54.473: Unable to open /var/lib/snapd/desktop/dconf/profile/user: Permission denied
+
+** (/usr/lib/firefox/firefox:31922): WARNING **: 23:21:54.474: Unable to connect to dbus: Could not connect: Permission denied
+1598464314873	Marionette	INFO	Listening on port 43329
+1598464314949	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
