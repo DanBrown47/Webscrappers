@@ -2,7 +2,6 @@
 from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 from bs4 import BeautifulSoup
-from datetime import datetime
 import time
 import csv
 
@@ -12,7 +11,7 @@ dist = "11"
 # i = "1"
 options = Options()
 # options.headless = True
-driver = webdriver.Firefox(options=options, executable_path=r"/home/rook/PycharmProjects/news/geckodriver")
+driver = webdriver.Firefox(options=options, executable_path=r"/home/rook/work/scrap/Vahan_Scrap/geckodriver")
 base_url = "https://vahan.nic.in/nrservices/faces/user/searchstatus.xhtml"
 
 
@@ -26,8 +25,11 @@ def main():
             driver.find_element_by_id("regn_no1_exact").clear()
             driver.find_element_by_id("regn_no1_exact").send_keys(plate)
             driver.find_element_by_id("txt_ALPHA_NUMERIC").send_keys(captcha)
-            driver.find_element_by_xpath("/html/body/form/div[1]/div[3]/div/div[2]/div/div/div[2]/div[4]/div/button").click()
-            time.sleep(4)
+            try:
+                driver.find_element_by_xpath("/html/body/form/div[1]/div[3]/div/div[2]/div/div/div[2]/div[4]/div/button").click()
+            except:
+                print("Add time")
+            time.sleep(2)
             extract_data()
 
 
@@ -39,6 +41,7 @@ def extract_data():
 
     try:
         registration_no = clean(details_3[1].get_text())
+        print(registration_no)
     except IndexError:
         print("Vehicle not found")
     else:
@@ -64,37 +67,9 @@ def block_2(soup):
     PUCC = clean(details_3[21].get_text())
     Emmision_norms = clean(details_3[23].get_text())
     RC_Status = clean(details_3[25].get_text())
-
-
-
-    print(reg_place)
-    print(registration_no)
-    print(chasis_no)
-    print(engine_no)
-    print(vehicle_class)
-    print(name)
-    print(fuel)
-    print(maker_model)
-    print(fitness)
-    print(MV_Tax)
-    print(Insurance)
-    print(PUCC)
-    print(Emmision_norms)
-    print(RC_Status)
-    print("\n")
-    print("\n")
-    print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx")
-    print("\n")
-    print("\n")
-
-
-
-
-    
-            
-
-
-
+    with open('main.csv', 'a+', newline='\n') as file:
+        writer = csv.writer(file)
+        writer.writerow([registration_no,reg_place,chasis_no,engine_no,vehicle_class,name,fuel,maker_model,fitness,MV_Tax,Insurance,PUCC,Emmision_norms,RC_Status])
 
 
 
@@ -102,10 +77,10 @@ def clean(data):
     u = str(data)
     v = u.strip()
     w = v.replace('\n', '')
-    x = w.replace('<td style="text-align: left;">', '')
+    x = w.replace('"', '')
     y = x.replace("  ", "")
-    z = x.replace('<td>', '')
-    result = z.replace('</td>', '')
+    z = x.replace('/', ' ')
+    result = z.replace(',', '')
     return result
 
 
