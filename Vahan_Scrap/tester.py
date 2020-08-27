@@ -1,22 +1,50 @@
-# import multiprocessing
+
 from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import time
 import csv
+import sys
 
-state = "KL"
-dist = "11"
-# letters = "A"
-# i = "1"
+
+class bcolors:
+    HEADER = '\033[102m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[31m'
+    END = '\033[0m'
+    UNDERLINE = '\033[4m'
+
+
+print(bcolors.HEADER+"VAHAN EXTRACTOR v1.0"+bcolors.END)
+
+letterlist = []
+
+
+try:
+    state = sys.argv[1]
+except IndexError:
+    print(bcolors.GREEN+"""
+            Usage : python3 tester.py <state code> <locality code> <Series code for range input all with space>
+            Example : python3 tester.py KL 11 AA AB AC
+    """+bcolors.END)
+
+    exit()
+dist = sys.argv[2]
+n = len(sys.argv)
+for arg in range(3,n):
+    letterlist.append(sys.argv[arg])
+
+print(bcolors.YELLOW + " [ ! ] Initializing....."+ bcolors.END)
 options = Options()
-# options.headless = True
+options.headless = True
 driver = webdriver.Firefox(options=options, executable_path=r"/home/rook/work/scrap/Vahan_Scrap/geckodriver")
+
 base_url = "https://vahan.nic.in/nrservices/faces/user/searchstatus.xhtml"
 
-
-letterlist = ["A","B"]
 def main():
+
     driver.get(base_url)
     captcha = get_captcha()
     for letters in letterlist:
@@ -28,16 +56,21 @@ def main():
             try:
                 driver.find_element_by_xpath("/html/body/form/div[1]/div[3]/div/div[2]/div/div/div[2]/div[4]/div/button").click()
             except:
-                print("Add time")
+                print(bcolors.RED+" [ X ] "+bcolors.END+"Add time")
+                print(bcolors.YELLOW+"Trying again might be issues with server"+bcolors.END)
             time.sleep(2)
-            extract_data()
+            extract_data(i)
 
-def get_captcha():
+def get_captcha(): #This process will take both time and memory but runs only at once
     driver.find_element_by_id("regn_no1_exact").send_keys("KL11A01")
     for i in range(100):
             driver.find_element_by_id("txt_ALPHA_NUMERIC").clear()
             driver.find_element_by_id("txt_ALPHA_NUMERIC").send_keys(i)
-            driver.find_element_by_xpath("/html/body/form/div[1]/div[3]/div/div[2]/div/div/div[2]/div[4]/div/button").click()
+            try:
+                driver.find_element_by_xpath("/html/body/form/div[1]/div[3]/div/div[2]/div/div/div[2]/div[4]/div/button").click()
+            except:
+                print(bcolors.RED+" [ X ] "+bcolors.END+"Add time")
+                print(bcolors.YELLOW+"Trying again | might be issues with server"+bcolors.END)
             time.sleep(2)
             page =  driver.page_source
             soup = BeautifulSoup(page, 'html.parser')
@@ -45,13 +78,13 @@ def get_captcha():
             try:
                 registration_no = clean(details_3[1].get_text())
             except IndexError:
-                print("Captcha is not"+ str(i)+ "Checking" + str(i+1))
+                print(bcolors.RED+" [ ! ] "+bcolors.END+"Captcha is not  :  "+ bcolors.YELLOW +str(i)+ bcolors.END+ " Checking  " + str(i+1))
             else:
                 captcha = i
-                print(captcha)
+                print(bcolors.GREEN+" [ + ] Found | captcha is "+ bcolors.END +str(captcha))
                 return captcha
 
-def extract_data():
+def extract_data(i):
     page =  driver.page_source
     soup = BeautifulSoup(page, 'html.parser')
     details_3 = soup.findAll("div", {"class": "col-md-3"})
@@ -59,9 +92,9 @@ def extract_data():
 
     try:
         registration_no = clean(details_3[1].get_text())
-        print(registration_no)
+        print(bcolors.GREEN+" [ + ] "+ bcolors.END+registration_no + "  " + str(float((i*100)/10000))+ "%  Completed")
     except IndexError:
-        print("Vehicle not found")
+        print(bcolors.RED+" [ X ] "+bcolors.END+"Vehicle not found" )
     else:
         block_2(soup)
 
@@ -94,7 +127,7 @@ def block_2(soup):
 def clean(data):
     u = str(data)
     v = u.strip()
-    w = v.replace('\n', '')
+    w = v.replace('1. Registering Authority:', '')
     x = w.replace('"', '')
     y = x.replace("  ", "")
     z = x.replace('/', ' ')
