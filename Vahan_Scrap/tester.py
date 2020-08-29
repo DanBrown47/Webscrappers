@@ -1,4 +1,3 @@
-
 from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 from bs4 import BeautifulSoup
@@ -19,26 +18,27 @@ class bcolors:
 
 print(bcolors.HEADER+"VAHAN EXTRACTOR v1.0"+bcolors.END)
 
-letterlist = []
+letterlist = ["AA"]
+state = "KL"
+dist = "11"
 
-
-try:
-    state = sys.argv[1]
-except IndexError:
-    print(bcolors.GREEN+"""
-            Usage : python3 tester.py <state code> <locality code> <Series code for range input all with space>
-            Example : python3 tester.py KL 11 AA AB AC
-    """+bcolors.END)
-
-    exit()
-dist = sys.argv[2]
-n = len(sys.argv)
-for arg in range(3,n):
-    letterlist.append(sys.argv[arg])
+# try:
+#     state = sys.argv[1]
+# except IndexError:
+    # print(bcolors.GREEN+"""
+    #         Usage : python3 tester.py <state code> <locality code> <Series code for range input all with space>
+    #         Example : python3 tester.py KL 11 AA AB AC
+    # """+bcolors.END)
+    #
+    # exit()
+# dist = sys.argv[2]
+# n = len(sys.argv)
+# for arg in range(3,n):
+#     letterlist.append(sys.argv[arg])
 
 print(bcolors.YELLOW + " [ ! ] Initializing....."+ bcolors.END)
 options = Options()
-options.headless = True
+# options.headless = True
 driver = webdriver.Firefox(options=options, executable_path=r"/home/rook/work/scrap/Vahan_Scrap/geckodriver")
 
 base_url = "https://vahan.nic.in/nrservices/faces/user/searchstatus.xhtml"
@@ -54,7 +54,7 @@ def main():
             driver.find_element_by_id("regn_no1_exact").send_keys(plate)
             driver.find_element_by_id("txt_ALPHA_NUMERIC").send_keys(captcha)
             try:
-                driver.find_element_by_xpath("/html/body/form/div[1]/div[3]/div/div[2]/div/div/div[2]/div[4]/div/button").click()
+                driver.find_element_by_xpath("/html/body/form/div[2]/div[1]/div[4]/div/button").click()
             except:
                 print(bcolors.RED+" [ X ] "+bcolors.END+"Add time")
                 print(bcolors.YELLOW+"Trying again might be issues with server"+bcolors.END)
@@ -67,7 +67,7 @@ def get_captcha(): #This process will take both time and memory but runs only at
             driver.find_element_by_id("txt_ALPHA_NUMERIC").clear()
             driver.find_element_by_id("txt_ALPHA_NUMERIC").send_keys(i)
             try:
-                driver.find_element_by_xpath("/html/body/form/div[1]/div[3]/div/div[2]/div/div/div[2]/div[4]/div/button").click()
+                driver.find_element_by_xpath("/html/body/form/div[2]/div[1]/div[4]/div/button").click()
             except:
                 print(bcolors.RED+" [ X ] "+bcolors.END+"Add time")
                 print(bcolors.YELLOW+"Trying again | might be issues with server"+bcolors.END)
